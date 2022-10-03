@@ -3,14 +3,15 @@ import { RouterModule, Routes } from '@angular/router';
 import { TableroInicioUsuariosComponent } from './usuario/paginas/tablero-inicio-usuarios/tablero-inicio-usuarios.component';
 import { AgregarAccionesPartidoComponent } from './admin/paginas/agregar-acciones-partido/agregar-acciones-partido.component';
 import { TodosEventosEnVivoComponent } from './admin/paginas/todos-eventos-en-vivo/todos-eventos-en-vivo.component';
-import { AccesoComponent } from './autenticacion/acceso/acceso.component';
+import { AccesoComponent } from './autenticacion/paginas/acceso/acceso.component';
 import { AutenticacionComponent } from './autenticacion/autenticacion/autenticacion.component';
-import { RegistroComponent } from './autenticacion/registro/registro.component';
+import { RegistroComponent } from './autenticacion/paginas/registro/registro.component';
 import { UsuarioComponent } from './usuario/usuario/usuario.component';
 import { MisPollasComponent } from './usuario/paginas/mis-pollas/mis-pollas.component';
 import { MisPartidosEnVivoComponent } from './usuario/paginas/mis-partidos-en-vivo/mis-partidos-en-vivo.component';
 import { MiHistorialPollasComponent } from './usuario/paginas/mi-historial-pollas/mi-historial-pollas.component';
 import { AdminComponent } from './admin/admin/admin.component';
+import { NoEncontradoRedireccionComponent } from './compartidas/paginas/no-encontrado-redireccion/no-encontrado-redireccion.component';
 
 const routes: Routes = [
   {
@@ -109,11 +110,11 @@ const routes: Routes = [
     ],
   },
 
-  // {
-  //   path: '**',
-  //   redirectTo: '/pagina-404',
-  //   pathMatch: 'full',
-  // },
+  {
+    path: '**',
+    redirectTo: '/pagina-404',
+    component: NoEncontradoRedireccionComponent,
+  },
 ];
 
 @NgModule({
